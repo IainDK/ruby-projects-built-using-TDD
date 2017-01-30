@@ -1,1 +1,1 @@
-Exercise #1: FizzBuzz, built TDD style.
+Exercise #1: FizzBuzz
