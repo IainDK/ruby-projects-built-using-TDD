@@ -1,7 +1,7 @@
 class FizzBuzz
 
 def divisble_by_three?(number)
-  true
+  number % 3 == 0
 end
 
 end
