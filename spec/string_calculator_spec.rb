@@ -34,8 +34,16 @@ describe 'StringCalculator' do
       expect(string_calculator.add("10, 22,")).to eq 32
     end
 
-    it 'should work for multiple numbers, of varying digit lengths' do
-      expect(string_calculator.add("1, 5, 12, 16, 23, 27, 101, 202, 1050")).to eq 1437
+    it 'should remove all illegal characters from the string and add the numbers together' do
+          expect(string_calculator.add("1\n2, 3")).to eq 6
+    end
+
+    it 'should remove all illegal characters from the string and add the numbers together' do
+          expect(string_calculator.add("1\n2, 3\n\n4\n2, 8, 1, \n\n\n9\n10\n10, 50")).to eq 100
+    end
+
+    it 'should work for multiple numbers, upto the value of 1000' do
+      expect(string_calculator.add("1, 5, 12, 16, 23, 27, 101, 202, 1000")).to eq 1387
     end
 
     it 'should raise an error if a negative number is inputted; it should also display the negative number' do
@@ -44,6 +52,18 @@ describe 'StringCalculator' do
 
     it 'should raise an error if a negative number is inputted; it should display all negative numbers if more than one is entered' do
       expect {string_calculator.add("-2, 6, 10, -4, -16")}.to raise_error 'You cannot input a negative number: [-2, -4, -16]'
+    end
+
+    it 'should ignore all numbers higher than 1000' do
+      expect(string_calculator.add("1, 10, 100, 1001, 1234")).to eq 111
+    end
+
+    it 'should allow multiple delimiters' do
+      expect(string_calculator.add("//[*][%]\n1*2%3")).to eq 6
+    end
+
+    it 'should allow multiple delimiters of varying lengths' do
+      expect(string_calculator.add("//[***][%%%]\n1***2***3%%%4***5%%%%%%%10*************20")).to eq 45
     end
   end
 end
