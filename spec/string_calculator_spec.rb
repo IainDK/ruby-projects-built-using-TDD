@@ -38,8 +38,12 @@ describe 'StringCalculator' do
       expect(string_calculator.add("1, 5, 12, 16, 23, 27, 101, 202, 1050")).to eq 1437
     end
 
-    it 'should raise an error if a negative number is inputted' do
-      expect {string_calculator.add("-2, 6")}.to raise_error 'You cannot input a negative number.'
+    it 'should raise an error if a negative number is inputted; it should also display the negative number' do
+      expect {string_calculator.add("-2, 6")}.to raise_error 'You cannot input a negative number: [-2]'
+    end
+
+    it 'should raise an error if a negative number is inputted; it should display all negative numbers if more than one is entered' do
+      expect {string_calculator.add("-2, 6, 10, -4, -16")}.to raise_error 'You cannot input a negative number: [-2, -4, -16]'
     end
   end
 end
