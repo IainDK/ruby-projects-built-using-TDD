@@ -1,23 +1,15 @@
 class RomanNumerals
 
+  INTEGER_TO_RN_CONVERTER = {10 => "X", 9 => "IX", 5 => "V", 4 => "IV", 1 => "I"}
+
   def convert(num)
     result = ""
-    while num >= 10
-      result << "X"
-      num -= 10
+    INTEGER_TO_RN_CONVERTER.each do |int, rn|
+    while num >= int
+      result << rn
+      num -= int
+      end
     end
-    while num >= 9
-      result << "IX"
-      num -= 9
-    end
-    while num >= 5
-      result << "V"
-      num -= 5
-    end
-    while num >= 4
-      result << "IV"
-      num -= 4
-    end
-      result << "I" * num
+    result
   end
 end
