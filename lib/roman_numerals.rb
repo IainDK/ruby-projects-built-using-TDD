@@ -6,9 +6,13 @@ class RomanNumerals
       result << "X"
       num -= 10
     end
-    while num >= 5
+    if num >= 5
       result << "V"
       num -= 5
+    end
+    if num >= 4
+      result << "IV"
+      num -= 4
     end
       result << "I" * num
   end

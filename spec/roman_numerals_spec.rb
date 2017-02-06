@@ -37,5 +37,9 @@ describe 'RomanNumerals' do
     it "should return 'XXVIII' when num is equal to 28" do
       expect(rom_num.convert(28)).to eq 'XXVIII'
     end
+
+    it "should return 'IV' when num is equal to 4" do
+      expect(rom_num.convert(14)).to eq 'XIV'
+    end
   end
 end
