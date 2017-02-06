@@ -25,6 +25,17 @@ describe 'RomanNumerals' do
     it "should return 'X' when num is equal to 10" do
       expect(rom_num.convert(10)).to eq 'X'
     end
-  end
 
+    it "should return 'XV' when num is equal to 15" do
+      expect(rom_num.convert(15)).to eq 'XV'
+    end
+
+    it "should return 'XX' when num is equal to 20" do
+      expect(rom_num.convert(20)).to eq 'XX'
+    end
+
+    it "should return 'XXVIII' when num is equal to 28" do
+      expect(rom_num.convert(28)).to eq 'XXVIII'
+    end
+  end
 end
