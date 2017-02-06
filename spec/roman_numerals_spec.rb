@@ -6,12 +6,24 @@ describe 'RomanNumerals' do
 
   describe 'convert(num)' do
 
-    it "should return 'I' when num is 1" do
+    it "should return 'I' when num is equal to 1" do
       expect(rom_num.convert(1)).to eq 'I'
     end
 
-    it "should return 'II' when num is 2" do
-      expect(rom_num.convert(2)).to eq 'II'  
+    it "should return 'II' when num is equal to 2" do
+      expect(rom_num.convert(2)).to eq 'II'
+    end
+
+    it "should return 'IV' when num is equal to 5" do
+      expect(rom_num.convert(5)).to eq 'V'
+    end
+
+    it "should return 'VIII' when num is equal to 8" do
+      expect(rom_num.convert(8)).to eq 'VIII'
+    end
+
+    it "should return 'X' when num is equal to 10" do
+      expect(rom_num.convert(10)).to eq 'X'
     end
   end
 
