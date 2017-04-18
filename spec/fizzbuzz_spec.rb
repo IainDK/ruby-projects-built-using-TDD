@@ -1,6 +1,6 @@
 require 'fizzbuzz'
 
-describe FizzBuzz do
+describe 'FizzBuzz' do
   let(:game) { (FizzBuzz.new) }
 
   describe 'play(number)' do
